@@ -142,9 +142,9 @@
                           $("#display").scrollTop($("#display")[0].scrollHeight);
                       }
                   },
-                  error: function(response){
+                     error: function(response){
                       alert('An error occured')
-                  }
+                  }   
               });
           },500);
       });
@@ -162,7 +162,7 @@
             {% csrf_token %}
             <input type="hidden" name="username" id="username" value="{{username}}"/>
             <input type="hidden" name="room_id" id="room_id" value="{{room_details.id}}"/>
-            <input type="text" name="message" id="message" width="100px" />
+            <input type="text" placeholder="message" name="message" id="message" width="100px" />
             <input type="submit" value="Send">
         </form>
     </div>
@@ -183,7 +183,7 @@
           },
         //la  réponse HTTP pour signaler que le message a été envoyé avec succes
           success: function(data){
-           // alert(data)
+            //alert(data)
           }
         });
         document.getElementById('message').value = ''
